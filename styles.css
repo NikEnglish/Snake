@@ -1,125 +1,52 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
     text-align: center;
+    background-color: #eaeaea;
     margin: 0;
     padding: 0;
 }
 
-h1 {
-    color: #333;
-    margin-top: 20px;
-}
-
-.game-container {
-    margin-top: 20px;
+#game {
+    max-width: 400px;
+    margin: 20px auto;
 }
 
 #game-board {
     display: grid;
-    grid-template-columns: repeat(20, 30px);
-    grid-template-rows: repeat(20, 30px);
-    gap: 1px;
-    margin: 0 auto;
-    width: fit-content;
-    height: fit-content;
+    grid-template-columns: repeat(20, 20px);
+    grid-template-rows: repeat(20, 20px);
+    margin-bottom: 20px;
+    border: 1px solid #000;
 }
 
 .cell {
-    width: 30px;
-    height: 30px;
-    background-color: #fff;
-    border-radius: 4px;
+    width: 20px;
+    height: 20px;
 }
 
 .snake-head {
-    background-color: green;
-}
-
-.snake {
-    background-color: #808080;
-}
-
-.food {
-    background-color: red;
-}
-
-#score {
-    font-size: 1.5rem;
-    margin: 10px 0;
-}
-
-#speed-label, #food-label {
-    font-size: 1rem;
-    margin-right: 10px;
-}
-
-input[type="range"] {
-    width: 80%;
-    margin-bottom: 20px;
-}
-
-#edit-snake {
-    padding: 10px 20px;
-    font-size: 1.2rem;
-    margin-top: 10px;
-    cursor: pointer;
-    border: none;
-    background-color: #4CAF50;
-    color: white;
-    border-radius: 5px;
-}
-
-#edit-snake:hover {
-    background-color: #45a049;
-}
-
-.editor-container {
-    display: none;
-    text-align: center;
-    margin-top: 20px;
-}
-
-.editor-board {
-    display: grid;
-    grid-template-columns: repeat(20, 30px);
-    grid-template-rows: repeat(1, 30px);
-    gap: 1px;
-    margin: 0 auto;
-    width: fit-content;
-    height: fit-content;
-}
-
-.color-options {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-}
-
-.color-picker {
-    width: 30px;
-    height: 30px;
-    border: 2px solid #ccc;
-    margin: 0 5px;
-    cursor: pointer;
     border-radius: 50%;
 }
 
-.color-picker:hover {
-    opacity: 0.8;
+.snake {
+    border-radius: 50%;
 }
 
-#save-snake {
-    padding: 10px 20px;
-    font-size: 1.2rem;
+.food {
+    border-radius: 50%;
+}
+
+#controls {
     margin-top: 20px;
-    cursor: pointer;
-    border: none;
-    background-color: #4CAF50;
-    color: white;
-    border-radius: 5px;
 }
 
-#save-snake:hover {
-    background-color: #45a049;
+label {
+    display: block;
+    margin-top: 10px;
+}
+
+#score {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
 }
