@@ -4,14 +4,8 @@ const speedControl = document.getElementById('speed-control');
 const speedLabel = document.getElementById('speed-label');
 const foodControl = document.getElementById('food-control');
 const foodLabel = document.getElementById('food-label');
-const editSnakeButton = document.getElementById('edit-snake');
-const editorContainer = document.getElementById('editor-container');
-const editorBoard = document.getElementById('editor-board');
-const saveSnakeButton = document.getElementById('save-snake');
 const backgroundColorPicker = document.getElementById('background-color');
 const foodColorPicker = document.getElementById('food-color');
-const headColorPicker = document.getElementById('head-color');
-const bodyColorPicker = document.getElementById('body-color');
 
 let snake = [{ x: 10, y: 10 }];
 let direction = null;
@@ -20,7 +14,6 @@ let score = 0;
 let gameInterval;
 let speed = 50;
 let foodCount = 1;
-let snakeColors = ['#808080', '#006400']; // Цвет тела и головы змейки
 let backgroundColor = '#f4f4f9';
 let foodColor = '#ff0000';
 
@@ -40,16 +33,13 @@ function updateBoard() {
         const indexInBoard = segment.y * 20 + segment.x;
         if (index === 0) {
             cells[indexInBoard].classList.add('snake-head');
-            cells[indexInBoard].style.backgroundColor = snakeColors[1];
         } else {
             cells[indexInBoard].classList.add('snake');
-            cells[indexInBoard].style.backgroundColor = snakeColors[0];
         }
     });
     food.forEach(item => {
         const foodIndex = item.y * 20 + item.x;
         cells[foodIndex].classList.add('food');
-        cells[foodIndex].style.backgroundColor = foodColor;
     });
 }
 
@@ -157,35 +147,6 @@ function gameLoop() {
     updateBoard();
     scoreElement.textContent = `Очки: ${score}`;
 }
-
-editSnakeButton.addEventListener('click', () => {
-    editorContainer.style.display = 'block';
-    editorBoard.innerHTML = '';
-    snakeColors = [bodyColorPicker.value, headColorPicker.value];
-    const zShape = [
-        { x: 10, y: 10 },
-        { x: 9, y: 10 },
-        { x: 8, y: 10 },
-        { x: 8, y: 11 },
-        { x: 7, y: 11 },
-        { x: 6, y: 11 },
-        { x: 6, y: 12 },
-        { x: 5, y: 12 },
-        { x: 4, y: 12 }
-    ];
-    zShape.forEach((segment) => {
-        const cell = document.createElement('div');
-        cell.classList.add('cell');
-        editorBoard.appendChild(cell);
-    });
-});
-
-saveSnakeButton.addEventListener('click', () => {
-    editorContainer.style.display = 'none';
-    createBoard();
-    generateFood();
-    gameInterval = setInterval(gameLoop, 500 - speed * 5);
-});
 
 createBoard();
 generateFood();
