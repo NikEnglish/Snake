@@ -3,35 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Змейка с кастомизацией</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Змейка</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Игра Змейка</h1>
-    <div class="game-container">
+    <div id="game">
+        <h1>Змейка</h1>
         <div id="game-board"></div>
-        <p id="score">Очки: 0</p>
-        <label id="speed-label" for="speed-control">Скорость: 50</label>
-        <input type="range" id="speed-control" min="1" max="100" value="50">
-        <label id="food-label" for="food-control">Яблок за раз: 1</label>
-        <input type="range" id="food-control" min="1" max="100" value="1">
-        <label for="background-color">Цвет фона:</label>
-        <input type="color" id="background-color" value="#f4f4f9">
-        <label for="food-color">Цвет яблок:</label>
-        <input type="color" id="food-color" value="#ff0000">
-        <button id="edit-snake">Редактировать змейку</button>
-    </div>
-
-    <div class="editor-container" id="editor-container">
-        <h2>Редактор Змейки</h2>
-        <div class="editor-board" id="editor-board"></div>
-        <div class="color-options">
-            <input type="color" class="color-picker" id="head-color" value="#006400" />
-            <input type="color" class="color-picker" id="body-color" value="#808080" />
+        <div id="controls">
+            <label for="background-color">Цвет фона:</label>
+            <input type="color" id="background-color" value="#f4f4f9">
+            <label for="food-color">Цвет яблок:</label>
+            <input type="color" id="food-color" value="#ff0000">
+            <label for="speed-control" id="speed-label">Скорость: 50</label>
+            <input type="range" id="speed-control" min="1" max="100" value="50">
+            <label for="food-control" id="food-label">Яблок за раз: 1</label>
+            <input type="number" id="food-control" min="1" value="1">
         </div>
-        <button id="save-snake">Сохранить настройки</button>
+        <div id="score">Очки: 0</div>
     </div>
-
     <script src="script.js"></script>
 </body>
 </html>
