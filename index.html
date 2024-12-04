@@ -63,7 +63,6 @@
 </head>
 <body>
     <h1>Игра Змейка</h1>
-    <div id="game-board"></div>
     <p id="score">Очки: 0</p>
 
     <label id="speed-label" for="speed-control">Скорость: 50</label>
@@ -72,7 +71,10 @@
     <label id="food-label" for="food-control">Яблок за раз: 1</label>
     <input type="range" id="food-control" min="1" max="100" value="1">
 
+    <div id="game-board"></div>
+
     <script>
+        // Весь JavaScript остаётся без изменений
         const board = document.getElementById('game-board');
         const scoreElement = document.getElementById('score');
         const speedControl = document.getElementById('speed-control');
